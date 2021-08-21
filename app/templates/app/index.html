@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="experience-form">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-12 text-center">
+            <div class="heading">
+                <h1>Share Your Experience</h1>
+                <p>Make your experience live, pick amongst our categories.
+                    Get to know others who are like you , solve other's issues by commenting 
+                    and your issues might get solved.
+                </p>
+            </div>
+
+            <form action="{% url 'home' %}" method="POST">
+                {% csrf_token %}
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control shadow-none" name="title" placeholder="Title">
+                        </div>
+                        <div class="form-group ">
+                            <select name="category" id="" class="form-control  shadow-none">
+                                {% for c in category %}
+                                <option value="{{c.name}}" class="bg-dark">{{c.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" cols="10" rows="10" class="form-control shadow-none" name="post" placeholder="Type Your Experience"></textarea>
+                        </div>
+
+                        <button class="btn btn-outline-white home-btn shadow-none" type="submit">Share Experience</button>
+                    </div>
+                     
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+{% endblock %}
