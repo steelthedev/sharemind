@@ -20,7 +20,7 @@
 <body  style="background-image:url({% static 'img/hero.jpg' %} );">
   <nav class="navbar navbar-expand-md  navbar-fixed nav-bar">
 	
-			<a class="navbar-brand">Mindset</a>
+			<a class="navbar-brand" href="{% url 'home' %}">Mindset</a>
 			<button class="navbar-toggler" type="button"
 			data-toggle="collapse"
 			data-target="#toggleMobileMenu"
@@ -31,8 +31,10 @@
 			</button>
 
 			<div class="collapse navbar-collapse " id="toggleMobileMenu">
-				<ul class="navbar-nav ml-auto text-center ">
-				
+				<ul class="navbar-nav  text-center ">
+          <li class="nav-item">
+            <a href="{% url 'feed' %}" class="nav-link word-white">Feed</a>
+          </li>
 				</ul>
 			</div>
 		

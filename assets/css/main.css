@@ -65,3 +65,87 @@ body{
 .experience-form form select option{
   background:#111;
 }
+
+
+.feed{
+  padding: 60px 0;
+}
+
+.feed .post{
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+.feed .post .post-single{
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  overflow-x: hidden;
+  height: auto;
+  width: 100%;
+  
+}
+
+.feed .post .post-single .post-title h2{
+  font-size:2rem;
+}
+
+.feed .post .post-single .post-category span{
+  font-size: 1.4rem;
+}
+
+.feed .post .post-single .f-btn{
+  padding: 14px;
+  color: #fff;
+  background: #111;
+  margin-top: 10px;
+  width: 100%;
+  border: 0px solid ;
+  border-radius: 0;
+}
+
+.post-details{
+  padding: 60px 0;
+}
+
+.post-details .heading{
+  padding: 10px ;
+}
+
+.post-details .heading h2{
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+
+.post-details .post-category{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.post-details .words{
+  padding: 20px;
+  font-size:1.2rem;
+}
+
+.comments {
+  padding: 7px;
+  color: #fff;
+}
+
+.comments span{
+ color: #fff;
+}
+
+.white{
+  background: #ffffff;
+}
+
+.word-white{
+  color: #ffffff;
+}
+
+.nav-link:hover{
+  color: #ffffff;
+}

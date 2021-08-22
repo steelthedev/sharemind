@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+<section class="feed">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 text-center mt-3">
+                <h1>
+                    Stream Of Experience
+                </h1>
+                <p>
+                    Read experience of different genre from several users ready to cultivate minds with each other.
+                    You shall not be asked for your name in any circumstances. Neither are you allowed to share your 
+                    personal details with anyone as this platform wont like to harbour any risk.
+                </p>
+            </div>
+            </div>
+            <div class="row justify-content-center">
+                {% for e in experience %}
+                    <div class="col-md-4 col-lg-4 mt-4">
+                        <div class="post">
+                            <div class="post-single">
+                                <div class="post-title">
+                                    <h2>
+                                        {{e.title}}
+                                    </h2>
+                                </div>
+
+                                <div class="post-category">
+                                    <span>category: <span>{{e.category}}</span></span>
+                                </div>
+
+                                <a href="{% url 'post_details' slug=e.slug %}" type="button" class="btn btn-outline-white f-btn">Read Experience</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

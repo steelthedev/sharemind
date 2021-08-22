@@ -6,7 +6,7 @@
 
 
 <section class="post-details">
-    <div class="container">
+    <div class="containe word-white">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-12">
                 <div class="heading">
@@ -16,7 +16,12 @@
                         </h2>
                     </div>
 
-                    <div class="word">
+                    <div class="post-category">
+                        <span>category: <span>{{post.category}}</span></span>
+                    </div>
+
+
+                    <div class="words">
                         {{post.post}}
                     </div>
                 </div>
@@ -24,15 +29,23 @@
                 <form action="{% url 'post_details' slug=post.slug %} " method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <textarea type="text" class="form-control shadow-none" name="comment" placeholder="comment"></textarea>
+                        <textarea type="text" class="form-control shadow-none" cols="30" rows="10" name="comment" placeholder="comment"></textarea>
                     </div>
-                     <div class="comments">
-                        {% for comment in comments %}
-                            {{comment.text}}
-                        {% endfor %}
-                     </div>
                     <button class="btn btn-outline-white" type="submit">comment</button>
                 </form>
+                <div class="comments">
+                    <div class="row">
+                       {% for comment in comments %}
+                       <div class="col-12 mt-5">
+                           <span>{{comment.text}}</span>
+                           <hr class="my-3 white ">
+                       </div>
+                    
+                        {% endfor %}
+                        
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import redirect, render , get_object_or_404
 from .models import *
 from django.contrib import messages
 
@@ -17,6 +17,7 @@ def Home(request):
         e.save()
 
         messages.success(request, "Experience Successfully Shared")
+        return redirect('feed')
     return render(request , 'app/index.html' , context)
 
 def PostDetails(request, slug ):
@@ -35,3 +36,9 @@ def PostDetails(request, slug ):
     
     return render(request , "app/postdetails.html" , context)
 
+def Feed(request):
+    e = Experience.objects.all().order_by("date")
+    context = {
+        'experience':e
+    }
+    return render(request, "app/feed.html" , context)
