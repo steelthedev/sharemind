@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="user mt-5 pt-5 ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <img src="{% static 'img/hero2.jpg' %}" alt="" width="100%">
+            </div>
+    
+            <div class="col-md-7 mt-5 pt-5">
+                <form action="{% url 'accounts:signup' %}" method="post">
+                    {% csrf_token %}
+                    <div class="col-md-12 mt-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control shadow-none" name="username" placeholder="Input A Preferred Username">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div class="form-group">
+                            <input type="email" class="form-control shadow-none" name="email" placeholder="Email">
+                        </div>
+                    </div>
+    
+                    <div class="col-md-12 mt-3">
+                        <div class="form-group">
+                            <input type="password" class="form-control shadow-none" name="pwd1" placeholder="Input password">
+                        </div>
+                    </div>
+    
+                    <div class="col-md-12 mt-3 ">
+                        <div class="form-group">
+                            <input type="text" class="form-control shadow-none" name="pwd2" placeholder="Confirm Password">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3 ">
+                      <button class="submit-btn btn btn-outline-white " type="submit">Submit</button>
+                    </div>
+        </div>
+ 
+
+            </form>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

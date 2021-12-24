@@ -149,3 +149,11 @@ body{
 .nav-link:hover{
   color: #ffffff;
 }
+
+
+
+
+.user form .form-control{
+  padding: 10px;
+  margin: 3px;
+}
